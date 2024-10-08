@@ -14,8 +14,7 @@ public class Main {
         FileIO fileIO = new FileIO(filename);
         String jsonContent = Files.readString(fileIO.filePath);
         ObjectMapper objectMapper = new ObjectMapper();
-        List<User> users = objectMapper.readValue(jsonContent, new TypeReference<List<User>>() {});
-        return users;
+        return objectMapper.readValue(jsonContent, new TypeReference<List<User>>() {});;
     }
 
     public static String generateSqlLine(User user) {
